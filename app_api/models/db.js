@@ -1,30 +1,32 @@
 var mongoose = require("mongoose");
-require("./mekansema");
-//var dbURI = "mongodb://localhost/mekanbul";
-var dbURI ="mongodb+srv://sena:1234@mekanbul.1trzw75.mongodb.net/mekanbul?retryWrites=true&w=majority";
+
+var dbURI = "mongodb://localhost/mekanbul";
+// var dbURI = "mongodb+srv://yabdioglu:12345@mekanbul.qillxnc.mongodb.net/mekanbul?retryWrites=true&w=majority";
 mongoose.connect(dbURI);
 
 function kapat(msg, callback) {
-    mongoose.connection.close(function() {
-        console.log(msg);
-        callback;
-    });
+  mongoose.connection.close(() => {
+    console.log(msg);
+    callback();
+  });
 }
 
-process.on("SIGINT", function() {
-    kapat("Uygulama Kapatıldı!", function() {
-        process.exit(0);
-    });
+process.on("SIGINT", () => {
+  kapat("Uygulama kapatıldı", () => {
+    process.exit(0);
+  });
 });
 
-mongoose.connection.on("connected", function() {
-    console.log(dbURI + " adresindeki veritabanına bağlandı! \n")
+mongoose.connection.on("connected", () => {
+  console.log(dbURI + " adresindeki veritabanına bağlandı");
 });
 
-mongoose.connection.on("disconnected", function() {
-    console.log(dbURI + " adresindekii veritabanı bağlantısı koptu! \n")
+mongoose.connection.on("disconnect", () => {
+  console.log(dbURI + " adresindeki veritabanı bağlantısı koptu");
 });
 
-mongoose.connection.on("error", function() {
-    console.log("Bağlantı Hatası!")
+mongoose.connection.on("error", () => {
+  console.log("Bağlantı hatası");
 });
+
+require("./mekansema");
