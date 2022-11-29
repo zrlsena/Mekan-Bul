@@ -8,3 +8,9 @@
 
 - [Konum verilen mekan](https://mekanbul4.zrlsena.repl.co/api/mekanlar?enlem=37.&&boylam=35)
   ![](https://github.com/zrlsena/mekanbul4/blob/odev5/resimler/konumVerilenMekan.PNG)
+
+-[API Test]
+![](https://github.com/zrlsena/mekanbul4/blob/odev6/views/APITest.PNG)
+
+-[Collections Test]
+![](https://github.com/zrlsena/mekanbul4/blob/odev6/views/collectionsTest.PNG)
