@@ -67,7 +67,7 @@ describe("POST /api/mekanlar/:mekanid/yorumlar", function () {
     const response = await request
       .post(`/api/mekanlar/${process.env.mekanid}/yorumlar`)
       .send({
-        yorumYapan: "ASY",
+        yorumYapan: "Gamze",
         puan: 5,
         yorumMetni: "Kahveler harika",
       });
@@ -92,9 +92,9 @@ describe("PUT /api/mekanlar/:mekanid/yorumlar/:yorumid", function () {
         `/api/mekanlar/${process.env.mekanid}/yorumlar/${process.env.yorumid}`
       )
       .send({
-        yorumYapan: "Sinan",
+        yorumYapan: "Sena",
         puan: 4,
-        yorumMetni: "Kahveler harikaaaa",
+        yorumMetni: "Kahveler harika",
       });
     expect(response.status).to.eql(200);
   });
